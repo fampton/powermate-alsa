@@ -10,11 +10,13 @@ def cur_vol():
 
 def inc_vol(msg):
     if cur_vol() > 98:
+        mixer.setvoume(100)
         return
     mixer.setvolume(cur_vol()+2)
 
 def dec_vol(msg):
     if cur_vol() < 3:
+        mixer.setvolume(0)
         return
     mixer.setvolume(cur_vol()-2)
 
